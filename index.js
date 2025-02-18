@@ -66,6 +66,11 @@ app.get('/api', (req, res) => {
   res.json({ message: 'API funcionando correctamente' });
 });
 
+// Endpoint GET adicional para verificar el estado de la API
+app.get('/api/status', (req, res) => {
+  res.json({ message: 'La API está funcionando correctamente', time: new Date() });
+});
+
 // Iniciar el servidor
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
